@@ -18,6 +18,7 @@ public abstract class Transport {
     }
 
     public abstract void moveObject(float speed);
+
     public abstract boolean stopObject();
 
     protected void setValues(float speed, int weight, String color, byte[] coordinate) {
@@ -33,5 +34,20 @@ public abstract class Transport {
         for (int i = 0; i < this.coordinate.length; i++)
             infoCoordinates += this.coordinate[i] + "\n";
         return info + infoCoordinates;
+    }
+    class Engine{
+        private boolean isReady;
+        private int km;
+
+        public void setValues(boolean isReady, int km) {
+            this.isReady = isReady;
+            this.km = km;
+        }
+        public void info(){
+            if (isReady)
+                System.out.println("Двигатель исправен");
+            else
+                System.out.println("Нет, он не работает. Он проехал уже " + km + " км");
+        }
     }
 }

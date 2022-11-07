@@ -1,6 +1,9 @@
 package com.itproger;
 
 public class Car extends Transport{
+
+    public Engine engine = new Engine();
+
     public  Car(float speed, int weight, String color, byte[] coordinate){
         super(speed, weight, color, coordinate);
     }
@@ -13,6 +16,6 @@ public class Car extends Transport{
     @Override
     public boolean stopObject() {
         this.speed = 0;
-        return false;
+        return true;
     }
 }
